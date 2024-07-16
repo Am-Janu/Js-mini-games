@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Krishna_Library</title>
+    <link rel="stylesheet" href="Library.css" />
+  </head>
+
+  <body>
+    <div class="nav">
+      <h1>Krishna_Library</h1>
+    </div>
+
+    <div class="container" id="library">
+      <div class="books">
+        <h1>The Complete Life of Krishna</h1>
+        <h3>Janakiraman</h3>
+        <p>
+            Krishna, one of the most beloved characters of the Hindu pantheon, has been portrayed in many lights: a god-child, a prankster, a model lover, a divine hero, an exemplary ruler, and the Supreme Being. In The Complete Life of Krishna, Vanamali, a leading Krishna expert from a long line of prominent Krishna devotees, provides the first book in English or Sanskrit to cover the complete range of the avatar’s life.
+        </p>
+        <button onclick="deleteall(event)">Delete</button>
+      </div>
+    </div>
+
+    <div class="popup_back"></div>
+
+    <div class="popup">
+      <table>
+        <tr>
+          <td>
+            <h1>Book Title :</h1>
+          </td>
+          <td>
+            <input type="text" id="title" />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <h3>Author Name :</h3>
+          </td>
+          <td>
+            <input type="a_name" id="aname" />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <h3>Content :</h3>
+          </td>
+          <td>
+            <textarea cols="23" rows="10" id="txt_content"></textarea>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <button style="background-color: rgb(25, 143, 25)" id="add-btn">
+              Add
+            </button>
+          </td>
+          <td>
+            <button style="background-color: rgb(252, 76, 76)" id="del">
+              Cancel
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <button id="add_plus" class="add">+</button>
+  </body>
+</html>
+
+<script>
+  var btn1 = document.getElementById("add_plus");
+  btn1.addEventListener("click", function () {
+    event.preventDefault();
+    var a = document.querySelector(".popup_back");
+    var b = document.querySelector(".popup");
+
+    a.style.display = "block";
+    b.style.display = "block";
+  });
+
+  var btn2 = document.getElementById("del");
+  btn2.addEventListener("click", function () {
+    event.preventDefault();
+    var a = document.querySelector(".popup_back");
+    var b = document.querySelector(".popup");
+    a.style.display = "none";
+    b.style.display = "none";
+  });
+  var btn3 = document.getElementById("add-btn");
+  btn3.addEventListener("click", function () {
+
+    var title = document.getElementById("title").value;
+    var Author = document.getElementById("aname").value;
+    var txt = document.getElementById("txt_content").value;
+
+
+    var main = document.getElementById("library");
+
+    var content_div = document.createElement("div");
+    content_div.setAttribute("class","books");
+
+    content_div.innerHTML = `<h1>${title}</h1> <h3>${Author}</h3><p>${txt}</p><button onclick="deleteall(event)">Delete</button>`;
+
+    main.append(content_div);
+  });
+
+
+  function deleteall(event){
+    event.target.parentElement.remove();
+  }
+
+
+</script>

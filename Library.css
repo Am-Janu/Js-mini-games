@@ -1,0 +1,110 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background-color: #5795be;
+}
+
+.nav {
+  padding: 20px;
+  background-color: black;
+  color: rgb(150, 196, 193);
+}
+
+.books {
+  height: fit-content;
+  width: 15%;
+  margin: 20px;
+  text-align: justify;
+  background-color: rgb(19, 18, 18);
+  color: rgb(150, 196, 193);
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.books h1 {
+  margin-bottom: 10px;
+}
+
+.books h3 {
+  margin-bottom: 5px;
+  color: aliceblue;
+}
+
+.books p {
+  margin-bottom: 5px;
+  color: rgb(202, 216, 228);
+}
+
+.books button {
+  background-color: rgb(150, 196, 193);
+  padding: 6px;
+  border: none;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.books button:focus {
+  outline: none;
+}
+
+.add {
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-size: xx-large;
+  background-color: rgb(65, 83, 116);
+  position: fixed;
+  left: 95%;
+  top: 90%;
+}
+
+.add:focus {
+  outline: none;
+}
+
+.popup_back {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: black;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+  display: none;
+}
+
+.popup {
+  z-index: 2;
+  background-color: rgb(89, 139, 180);
+  color: black;
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  height: fit-content;
+  width: fit-content;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  display: none;
+}
+
+.popup input {
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.popup textarea {
+  margin-top: 10px;
+}
+
+.popup button {
+  padding: 5px 40px;
+  border-radius: 5px;
+  margin-top: 5px;
+}

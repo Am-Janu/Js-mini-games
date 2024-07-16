@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+
+      div{
+          height: fit-content;
+          width: 500px;
+          border-radius: 5px;
+      }
+
+      ul{
+          padding: 10px;
+      }
+
+      button{
+          margin-left: 20px;
+      }
+      li{
+          list-style: none;
+          padding: 10px 0px;
+      }
+      j1
+    </style>
+  </head>
+
+  <body style="background-color: #fff5e1">
+    <center>
+      <div style="background-color: #ff6969">
+        <h1>TODO LIST</h1>
+        <input type="text" id="box" placeholder="Add your pending tasks" />
+        <button style="margin: 0px" onclick="clicked()">add</button>
+        <ul id="list"></ul>
+      </div>
+    </center>
+  </body>
+</html>
+<script>
+  function clicked() {
+    var a = document.getElementById("box").value;
+
+    var b = document.createElement("li");
+    b.innerHTML = a + "<button onclick ='deleted(event)'>delete</button>";
+
+    var l = document.getElementById("list");
+    l.append(b);
+  }
+
+  function deleted(event) {
+    event.target.parentElement.remove();
+  }
+</script>
